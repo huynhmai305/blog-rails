@@ -1,8 +1,15 @@
-<p id="notice"><%= notice %></p>
+<%= provide(:title, "All users") %>
 
-<h1>Users</h1>
-
-<table>
+<h1>All users</h1>
+<ul class="users">
+  <% @users.each do |user| %>
+    <li>
+      <%= gravatar_for user, size: 50 %>
+      <%= link_to user.name, user %>
+    </li>
+  <% end %>
+</ul>
+<!-- <table>
   <thead>
     <tr>
       <th>Name</th>
@@ -26,4 +33,4 @@
 
 <br>
 
-<%= link_to 'New User', new_user_path %>
+<%= link_to 'New User', new_user_path %> -->
